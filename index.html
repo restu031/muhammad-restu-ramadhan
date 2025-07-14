@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaya Kita - Aksesoris Handmade</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+      }
+
+      header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .logo h1 {
+        font-size: 2rem;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+      }
+
+      .logo p {
+        color: #666;
+        font-size: 0.9rem;
+        margin-top: -5px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      nav a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      nav a:hover::before {
+        left: 100%;
+      }
+
+      nav a:hover {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      }
+
+      .cart-count {
+        background: #ff6b6b;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 12px;
+        margin-left: 5px;
+        min-width: 18px;
+        text-align: center;
+        display: inline-block;
+        animation: bounce 0.5s ease;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      main {
+        margin-top: 80px;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.1),
+          rgba(255, 255, 255, 0.05)
+        );
+        backdrop-filter: blur(10px);
+        margin: 2rem;
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .hero h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(45deg, #fff, #f0f0f0);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .product-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 2rem;
+      }
+
+      .product-grid h2 {
+        text-align: center;
+        margin-bottom: 3rem;
+        font-size: 2.5rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .product-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 1.5rem;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .product-card:hover::before {
+        left: 100%;
+      }
+
+      .product-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-bottom: 1rem;
+        transition: transform 0.3s ease;
+      }
+
+      .product-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .product-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+
+      .price {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #e74c3c;
+        margin-bottom: 1rem;
+      }
+
+      .description {
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .btn {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .btn:hover::before {
+        left: 100%;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+      }
+
+      .cart-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .cart-section h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #333;
+        font-size: 2rem;
+      }
+
+      .cart-item {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 15px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .cart-item:hover {
+        background: rgba(255, 255, 255, 1);
+        transform: translateX(5px);
+      }
+
+      .cart-item img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        margin-right: 20px;
+        border-radius: 10px;
+      }
+
+      .cart-item-info {
+        flex: 1;
+      }
+
+      .cart-item-info h4 {
+        margin: 0 0 8px 0;
+        font-size: 1.1rem;
+        color: #333;
+      }
+
+      .cart-item-price {
+        color: #e74c3c;
+        font-size: 1rem;
+        font-weight: bold;
+        margin-bottom: 8px;
+      }
+
+      .quantity-controls {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 10px 0;
+      }
+
+      .quantity-btn {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+
+      .quantity-btn:hover {
+        background: linear-gradient(45deg, #5a67d8, #6b46c1);
+        transform: scale(1.1);
+      }
+
+      .quantity {
+        background: #f8f9fa;
+        padding: 5px 15px;
+        border-radius: 15px;
+        font-weight: bold;
+        min-width: 40px;
+        text-align: center;
+        border: 2px solid #e9ecef;
+      }
+
+      .item-total {
+        color: #28a745;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-top: 5px;
+      }
+
+      .cart-item-remove {
+        background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .cart-item-remove:hover {
+        background: linear-gradient(45deg, #ff5252, #d32f2f);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+      }
+
+      .cart-total {
+        text-align: right;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid #667eea;
+      }
+
+      .cart-total h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .checkout-btn {
+        background: linear-gradient(45deg, #4caf50, #45a049);
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 25px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .checkout-btn:hover {
+        background: linear-gradient(45deg, #45a049, #388e3c);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(76, 175, 80, 0.3);
+      }
+
+      .empty-cart {
+        text-align: center;
+        padding: 60px 20px;
+        color: #666;
+        font-size: 1.2rem;
+      }
+
+      .contact-page {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+      }
+
+      .contact-form h3 {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: #333;
+        font-size: 2rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 10px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+      }
+
+      .notification {
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: linear-gradient(45deg, #4caf50, #45a049);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 15px;
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+      }
+
+      .notification.show {
+        transform: translateX(0);
+      }
+
+      footer {
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        padding: 0 2rem;
+      }
+
+      .footer-section h3 {
+        margin-bottom: 1rem;
+        color: #fff;
+      }
+
+      .footer-section p {
+        color: #ccc;
+        margin-bottom: 0.5rem;
+      }
+
+      @media (max-width: 768px) {
+        .header-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .hero h2 {
+          font-size: 2rem;
+        }
+
+        .products {
+          grid-template-columns: 1fr;
+        }
+
+        .cart-item {
+          flex-direction: column;
+          text-align: center;
+          gap: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <div class="logo-icon">
+            <span class="material-symbols-outlined">jewelry</span>
+          </div>
+          <div>
+            <h1>Gaya Kita</h1>
+            <p>Aksesoris Handmade Premium</p>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li>
+              <a href="#home">
+                <span class="material-symbols-outlined">home</span>
+                Beranda
+              </a>
+            </li>
+            <li>
+              <a href="#products">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                Produk
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <span class="material-symbols-outlined">contact_mail</span>
+                Kontak
+              </a>
+            </li>
+            <li>
+              <a href="#cart">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Keranjang
+                <span id="cart-count" class="cart-count" style="display: none"
+                  >0</span
+                >
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <h2>Wujudkan Gaya Unik Anda</h2>
+        <p>
+          Koleksi aksesoris handmade berkualitas tinggi yang dibuat dengan cinta
+          dan keahlian tangan untuk melengkapi gaya hidup Anda
+        </p>
+      </section>
+
+      <section id="products" class="product-grid">
+        <h2>Koleksi Produk Kami</h2>
+        <div class="products">
+          <!-- Produk 1 -->
+          <div class="product-card">
+            <img src="images/Product 1.jpg" alt="Kalung Handmade" />
+            <h3>Kalung Handmade</h3>
+            <p class="price">Rp 85.000</p>
+            <p class="description">
+              Kalung handmade dengan desain etnik yang unik, terbuat dari bahan
+              berkualitas tinggi dengan finishing yang halus dan tahan lama.
+            </p>
+            <button
+              class="btn"
+              onclick="addToCart('Kalung Handmade', 'Rp 85.000', 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=250&fit=crop')"
+            >
+              Beli Sekarang
+            </button>
+          </div>
+
+          <!-- Produk 2 -->
+          <div class="product-card">
+            <img src="images/Product 2.jpg" alt="Gelang Tali" />
+            <h3>Gelang Tali</h3>
+            <p class="price">Rp 45.000</p>
+            <p class="description">
+              Gelang tali dengan desain minimalis yang cocok untuk daily wear.
+              Terbuat dari tali berkualitas dengan aksen logam yang elegan.
+            </p>
+            <button
+              class="btn"
+              onclick="addToCart('Gelang Tali', 'Rp 45.000', 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=400&h=250&fit=crop')"
+            >
+              Beli Sekarang
+            </button>
+          </div>
+
+          <!-- Produk 3 -->
+          <div class="product-card">
+            <img src="images/Product 3.jpg" alt="Anting Kayu" />
+            <h3>Anting Kayu</h3>
+            <p class="price">Rp 65.000</p>
+            <p class="description">
+              Anting dari kayu natural dengan finishing yang halus. Desain yang
+              unik dan ramah lingkungan untuk tampilan yang natural dan elegan.
+            </p>
+            <button
+              class="btn"
+              onclick="addToCart('Anting Kayu', 'Rp 65.000', 'https://images.unsplash.com/photo-1635767582909-4b4e5a2e4035?w=400&h=250&fit=crop')"
+            >
+              Beli Sekarang
+            </button>
+          </div>
+
+          <!-- Produk 4 -->
+          <div class="product-card">
+            <img src="images/Product 4.jpg" alt="Cincin Perak" />
+            <h3>Cincin Perak</h3>
+            <p class="price">Rp 125.000</p>
+            <p class="description">
+              Cincin perak dengan desain vintage yang timeless. Dibuat dengan
+              teknik handmade traditional untuk hasil yang berkualitas tinggi.
+            </p>
+            <button
+              class="btn"
+              onclick="addToCart('Cincin Perak', 'Rp 125.000', 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=250&fit=crop')"
+            >
+              Beli Sekarang
+            </button>
+          </div>
+
+          <!-- Produk 5 -->
+          <div class="product-card">
+            <img src="images/Product 5.jpg" alt="Bros Kain" />
+            <h3>Bros Kain Batik</h3>
+            <p class="price">Rp 55.000</p>
+            <p class="description">
+              Bros kain batik dengan motif traditional Indonesia. Cocok untuk
+              pelengkap outfit formal maupun casual dengan sentuhan budaya
+              lokal.
+            </p>
+            <button
+              class="btn"
+              onclick="addToCart('Bros Kain Batik', 'Rp 55.000', 'https://images.unsplash.com/photo-1594736797933-d0aa5d9fe4c2?w=400&h=250&fit=crop')"
+            >
+              Beli Sekarang
+            </button>
+          </div>
+
+          <!-- Produk 6 -->
+          <div class="product-card">
+            <img src="images/Product 6.jpg" alt="Kalung Pendant" />
+            <h3>Kalung Pendant</h3>
+            <p class="price">Rp 95.000</p>
+            <p class="description">
+              Kalung dengan pendant bohemian yang artistik. Cocok untuk
+              memberikan sentuhan vintage dan artistic pada penampilan Anda.
+            </p>
+            <button
+              class="btn"
+              onclick="addToCart('Kalung Pendant', 'Rp 95.000', 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=400&h=250&fit=crop')"
+            >
+              Beli Sekarang
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-page">
+        <div class="contact-form">
+          <h3>Hubungi Kami</h3>
+          <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label for="name">Nama Lengkap:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Nomor Telepon:</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Pesan:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn">Kirim Pesan</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Cart Section -->
+      <section id="cart" class="cart-section">
+        <h2>Keranjang Belanja</h2>
+        <div id="cart-items">
+          <div class="empty-cart">
+            <p>Keranjang Anda masih kosong</p>
+            <p>Mulai berbelanja untuk menambahkan produk ke keranjang</p>
+          </div>
+        </div>
+        <div id="cart-total" class="cart-total" style="display: none">
+          <h3>Total Belanja: <span id="total-price">Rp 0</span></h3>
+          <button class="checkout-btn" onclick="checkout()">
+            Lanjutkan Pembelian
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+      Produk berhasil ditambahkan ke keranjang!
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Gaya Kita</h3>
+          <p>
+            Toko aksesoris handmade terpercaya dengan koleksi unik dan
+            berkualitas tinggi
+          </p>
+        </div>
+        <div class="footer-section">
+          <h3>Kontak</h3>
+          <p>Email: MuhammadRestu24@gmail.com</p>
+          <p>WhatsApp: +62 856-0227-8401</p>
+          <p>Instagram: @gayakita_official</p>
+        </div>
+        <div class="footer-section">
+          <h3>Alamat</h3>
+          <p>Jl. Cicalengka Raya no 21</p>
+          <p>Bandung, Jawa Barat 40132</p>
+          <p>Indonesia</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      let cart = [];
+      let total = 0;
+
+      function addToCart(name, price, image) {
+        // Add loading animation to button
+        const buttons = document.querySelectorAll(".btn");
+        buttons.forEach((btn) => {
+          if (btn.textContent === "Beli Sekarang") {
+            const originalText = btn.textContent;
+            btn.textContent = "Menambahkan...";
+            btn.style.opacity = "0.7";
+            btn.disabled = true;
+
+            setTimeout(() => {
+              btn.textContent = originalText;
+              btn.style.opacity = "1";
+              btn.disabled = false;
+            }, 500);
+          }
+        });
+
+        const priceValue = parseInt(
+          price.replace("Rp ", "").replace(/\./g, "")
+        );
+        const existingItem = cart.find((item) => item.name === name);
+
+        if (existingItem) {
+          existingItem.quantity += 1;
+          showNotification(`${name} ditambahkan lagi ke keranjang!`);
+        } else {
+          cart.push({
+            name: name,
+            price: price,
+            priceValue: priceValue,
+            image: image,
+            quantity: 1,
+          });
+          showNotification(`${name} berhasil ditambahkan ke keranjang!`);
+        }
+
+        updateCartDisplay();
+        updateCartCount();
+      }
+
+      function removeFromCart(name) {
+        if (
+          confirm(`Apakah Anda yakin ingin menghapus ${name} dari keranjang?`)
+        ) {
+          cart = cart.filter((item) => item.name !== name);
+          updateCartDisplay();
+          updateCartCount();
+          showNotification(`${name} berhasil dihapus dari keranjang!`);
+        }
+      }
+
+      function updateCartDisplay() {
+        const cartItems = document.getElementById("cart-items");
+        const cartTotal = document.getElementById("cart-total");
+
+        if (cart.length === 0) {
+          cartItems.innerHTML = `
+            <div class="empty-cart">
+              <p>Keranjang Anda masih kosong</p>
+              <p>Mulai berbelanja untuk menambahkan produk ke keranjang</p>
+            </div>
+          `;
+          cartTotal.style.display = "none";
+        } else {
+          let cartHTML = "";
+          total = 0;
+
+          cart.forEach((item) => {
+            const itemTotal = item.priceValue * item.quantity;
+            total += itemTotal;
+
+            cartHTML += `
+              <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="cart-item-info">
+                  <h4>${item.name}</h4>
+                  <div class="cart-item-price">${item.price}</div>
+                  <div class="quantity-controls">
+                    <button class="quantity-btn" onclick="decreaseQuantity('${
+                      item.name
+                    }')">-</button>
+                    <span class="quantity">${item.quantity}</span>
+                    <button class="quantity-btn" onclick="increaseQuantity('${
+                      item.name
+                    }')">+</button>
+                  </div>
+                  <div class="item-total">Subtotal: Rp ${itemTotal.toLocaleString(
+                    "id-ID"
+                  )}</div>
+                </div>
+                <button class="cart-item-remove" onclick="removeFromCart('${
+                  item.name
+                }')">Hapus</button>
+              </div>
+            `;
+          });
+
+          cartItems.innerHTML = cartHTML;
+          cartTotal.style.display = "block";
+          document.getElementById("total-price").textContent =
+            "Rp " + total.toLocaleString("id-ID");
+        }
+      }
+
+      function updateCartCount() {
+        const cartCount = document.getElementById("cart-count");
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+        if (totalItems > 0) {
+          cartCount.textContent = totalItems;
+          cartCount.style.display = "inline-block";
+        } else {
+          cartCount.style.display = "none";
+        }
+      }
+
+      function showNotification(
+        message = "Produk berhasil ditambahkan ke keranjang!"
+      ) {
+        const notification = document.getElementById("notification");
+        notification.textContent = message;
+        notification.classList.add("show");
+
+        setTimeout(() => {
+          notification.classList.remove("show");
+        }, 3000);
+      }
+
+      function checkout() {
+        if (cart.length === 0) {
+          alert("Keranjang Anda masih kosong!");
+          return;
+        }
+
+        let orderSummary = "=== PESANAN GAYA KITA ===\n\n";
+        cart.forEach((item) => {
+          const itemTotal = item.priceValue * item.quantity;
+          orderSummary += `${item.name}\n`;
+          orderSummary += `${item.price} x ${
+            item.quantity
+          } = Rp ${itemTotal.toLocaleString("id-ID")}\n\n`;
+        });
+        orderSummary += `TOTAL PEMBAYARAN: Rp ${total.toLocaleString(
+          "id-ID"
+        )}\n\n`;
+        orderSummary += `Silakan screenshot pesanan ini dan kirim ke WhatsApp kami untuk melanjutkan pembayaran.\n\n`;
+        orderSummary += `Terima kasih telah berbelanja di Gaya Kita! 🛍️`;
+
+        if (confirm("Apakah Anda yakin ingin melanjutkan checkout?")) {
+          alert(orderSummary);
+
+          // Optional: Redirect to WhatsApp
+          const phoneNumber = "6285602278401"; // Ganti dengan nomor WhatsApp bisnis
+          let waMessage = "Halo Gaya Kita! Saya ingin melakukan pemesanan:\n\n";
+          cart.forEach((item) => {
+            const itemTotal = item.priceValue * item.quantity;
+            waMessage += `${item.name} x${
+              item.quantity
+            } = Rp ${itemTotal.toLocaleString("id-ID")}\n`;
+          });
+          waMessage += `\nTotal: Rp ${total.toLocaleString(
+            "id-ID"
+          )}\n\nMohon info untuk proses selanjutnya. Terima kasih!`;
+
+          const encodedMessage = encodeURIComponent(waMessage);
+          window.open(
+            `https://wa.me/${phoneNumber}?text=${encodedMessage}`,
+            "_blank"
+          );
+
+          // Reset cart after checkout
+          cart = [];
+          updateCartDisplay();
+          updateCartCount();
+          showNotification(
+            "Pesanan berhasil dikirim! Silakan cek WhatsApp Anda."
+          );
+        }
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const message = document.getElementById("message").value;
+
+        // Simulate form submission
+        alert(
+          `Terima kasih ${name}! Pesan Anda telah dikirim. Kami akan menghubungi Anda segera.`
+        );
+
+        // Reset form
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("phone").value = "";
+        document.getElementById("message").value = "";
+
+        // Optional: Send to WhatsApp
+        const phoneNumber = "6285602278401"; // Ganti dengan nomor WhatsApp bisnis
+        const waMessage = encodeURIComponent(
+          `Halo, saya ${name}.\nEmail: ${email}\nTelepon: ${phone}\nPesan: ${message}`
+        );
+        window.open(`https://wa.me/${phoneNumber}?text=${waMessage}`, "_blank");
+      }
+
+      // Quantity controls
+      function increaseQuantity(name) {
+        const item = cart.find((item) => item.name === name);
+        if (item) {
+          item.quantity += 1;
+          updateCartDisplay();
+          updateCartCount();
+        }
+      }
+
+      function decreaseQuantity(name) {
+        const item = cart.find((item) => item.name === name);
+        if (item && item.quantity > 1) {
+          item.quantity -= 1;
+          updateCartDisplay();
+          updateCartCount();
+        }
+      }
+
+      // Smooth scrolling for navigation
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(255, 255, 255, 0.98)";
+          header.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.1)";
+        } else {
+          header.style.background = "rgba(255, 255, 255, 0.95)";
+          header.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+        }
+      });
+    </script>
+  </body>
+</html>
